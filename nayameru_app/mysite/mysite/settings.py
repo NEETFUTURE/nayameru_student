@@ -84,6 +84,7 @@ DATABASES = {
 
 
 # Internationalization
+# SITE_ROOT = abspath(os.path.join(dirname(__file__),".."))
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'ja'
@@ -101,3 +102,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+#静的ファイルを保存するフォルダのパスを設定
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,'static'),
+)

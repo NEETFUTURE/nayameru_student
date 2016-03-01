@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+#staticフォルダを有効にする為の関数
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^nayameru/', include('nayameru_student.urls', namespace='nayameru_student'))
 ]
+
+#staticフォルダを有効にする
+urlpatterns += staticfiles_urlpatterns()
