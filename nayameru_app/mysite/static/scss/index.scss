@@ -1,0 +1,59 @@
+/*
+ Thats SCSS!!
+ */
+
+$height_body:100%;
+$nav-color:#53559c;
+$font_nav:#ffc300;
+$width:100%;
+
+@mixin border_bottom($px,$style,$color){
+    border-bottom: $px $style $color;
+}
+
+@mixin back_ground($url, $op1, $op2, $op3){
+    background: url($url) $op1 $op2 $op3;
+}
+
+html , body{
+    height:$width;
+    margin:0;
+}
+
+.navbar {
+    @include border_bottom(5px, solid, #BA55D3);
+    background-color:$nav_color;
+
+    .navbar-brand{
+        @include back_ground("../img/logo.png", no-repeat, left, center);
+        background-size:contain;
+        height:82px;
+        width:250px;
+        padding:0px;
+    }
+
+    #search{
+        width:290px;
+    }
+
+    .fontop {
+        color:$font_nav;
+    }
+
+    .popover {
+        width:200px;
+        height:90px;
+
+        .popover-content{
+            text-align:center;
+
+            button{
+                width:$width;
+            }
+
+            a{
+                width:$width;
+            }
+        }
+    }
+}
