@@ -31,14 +31,14 @@
 		</div>
       </form>
       <ul class="nav navbar-nav navbar-right">
-		  <li><a href="#" id="hoge" class="fontop"  data-toggle="popover"  data-content="<button type='button' class='btn btn-secondary btn-sm btn-success text-center'>ログイン</button>もしくは <a id='entry' href='#'>新規登録</a>" data-placement="bottom">ログイン</a></li>
-        <li><a href="#" class="fontop">Link</a></li>
+		  <li><a href="#" id="hoge" class="fontop"  data-toggle="popover"  data-content="<button type='button'id='fuga' class='btn btn-secondary btn-sm btn-success text-center' data-toggle='modal' data-target='#form-modal' >ログイン</button>もしくは <a id='entry' href='#'>新規登録</a>" data-placement="bottom">ログイン</a></li>
+		  <!-- <li><a href="#" class="fontop">Link</a></li> -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle fontop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" id="login" class="dropdown-toggle fontop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">表示順<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">価格(高い)</a></li>
+            <li><a href="#">価格(低い)</a></li>
+            <li><a href="#">人気順</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
@@ -47,10 +47,35 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav> 
-     
-<div class="content">
-	dosomething
-</div>
+		 
+	<div id="content">
+		<div class="container">
+			<div class="jumbotron">
+				<h2>ここに人気(関連付け)の本などを横スライドで表示できたらいいなってjk</h2>
+			</div>
+			<div class="jumbotron">
+				<h2>ここに検索結果の本一覧表示できたらいいなって</h2>
+			</div>
+		</div>
+	</div> <!-- content -->
+
+	<div id="form-modal" class="modal fade" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title">新規登録</h4>
+		  </div>
+		  <div class="modal-body">
+			<p>One fine body&hellip;</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary">Save changes</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
