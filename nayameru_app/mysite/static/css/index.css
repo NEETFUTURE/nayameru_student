@@ -1,41 +1,36 @@
-.navbar {
-	border-bottom: solid 5px #BA55D3;
-}
-.navbar-brand {
-	background: url("../img/logo.png") no-repeat left center;
-	background-size: contain;
-	height: 82px;
-	width: 250px;
-	padding:0px;
-}
+/*
+ Thats SCSS!!
+ */
+html, body {
+  height: 100%;
+  margin: 0; }
 
 .navbar {
-	background-color: #53559c;
-}
+  border-bottom: 5px solid #BA55D3;
+  background-color: #53559c; }
+  .navbar .navbar-brand {
+    background: url("../img/logo.png") no-repeat left center;
+    background-size: contain;
+    height: 82px;
+    width: 250px;
+    padding: 0px; }
+  .navbar .input-group-addon {
+    background-color: #ffc300; }
+  .navbar #search {
+    width: 290px; }
+  .navbar .fontop {
+    color: #ffc300 !important; }
+  .navbar .popover {
+    width: 200px;
+    height: 90px; }
+    .navbar .popover .popover-content {
+      text-align: center; }
+      .navbar .popover .popover-content button {
+        width: 100%; }
+      .navbar .popover .popover-content a {
+        width: 100%; }
 
-#search{
-	width:290px;
-}
+.modal-header {
+  border-bottom: 2px solid #ffc300; }
 
-.fontop {
-	color:#ffc300 !important; 
-}
-
-.popover {
-	width : 200px ;
-	height:90px;
-}
-
-
-.popver-content {
-	text-align:center;
-}
-
-.popover button {
-	width:100%;
-}
-
-.popover a {
-	width:100%;
-}
-
+/*# sourceMappingURL=index.css.map */
