@@ -21,7 +21,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^nayameru/', include('nayameru_student.urls', namespace='nayameru_student'))
+    url(r'^nayameru_student/', include('nayameru_student.urls', namespace='nayameru_student'))
 ]
 
 #staticフォルダを有効にする
