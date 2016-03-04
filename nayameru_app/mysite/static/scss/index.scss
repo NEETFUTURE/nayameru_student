@@ -64,3 +64,18 @@ html , body{
 .modal-header {
 	@include border_bottom(2px, solid, $font_nav)	
 }
+
+#content {
+	.jumbotron:first-child {
+		@include border_bottom(2px, solid, grey);
+		background-color : grey;
+	}
+	.jumbotron {
+		@include border_bottom(2px, solid, $font_nav);
+		background-color:white;
+		.book-title {
+			@include border_bottom(2px, solid, grey);
+			margin-bottom:20px;
+		}
+	}
+}

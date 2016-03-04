@@ -33,4 +33,14 @@ html, body {
 .modal-header {
   border-bottom: 2px solid #ffc300; }
 
+#content .jumbotron:first-child {
+  border-bottom: 2px solid grey;
+  background-color: grey; }
+#content .jumbotron {
+  border-bottom: 2px solid #ffc300;
+  background-color: white; }
+  #content .jumbotron .book-title {
+    border-bottom: 2px solid grey;
+    margin-bottom: 20px; }
+
 /*# sourceMappingURL=index.css.map */
