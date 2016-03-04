@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/index.css">
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <form class="navbar-form navbar-left" role="search">
 		<div class="input-group" id="search">
-			<input type="text" class="form-control"aria-describedby="basic-addon2">
+			<input type="text" id="search-box" class="form-control"aria-describedby="basic-addon2">
 			<span class="input-group-addon" id="basic-addon2"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
 		</div>
       </form>
@@ -40,7 +40,7 @@
             <li><a href="#">価格(低い)</a></li>
             <li><a href="#">人気順</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#add-modal">追加検索</a></li>
           </ul>
 		</li>
       </ul>
@@ -64,22 +64,68 @@
 		<div class="modal-content">
 		  <div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title">新規登録</h4>
+			<h4 class="modal-title">ログイン</h4>
 		  </div>
 		  <div class="modal-body">
-			<p>One fine body&hellip;</p>
-		  </div>
+			<form>
+				<div class="form-group">
+					<label>name</label>
+					<input type="text" name="email" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>password</label>
+					<input type="text" name="password" class="form-control">
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox">ログイン状態を保持する
+					</label>
+				</div>
+			</form>
+		  </div><!-- modal body -->
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary">Save changes</button>
+			<button type="button" class="btn btn-primary">ログイン</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	
+	<!-- 追加書籍検索用モーダル -->
+	<div id="add-modal" class="modal fade" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title text-center">書籍の追加検索</h4>
+		  </div>
+		  <div class="modal-body">
+			<form>
+				<div class="form-group">
+					<label>書籍1</label>
+					<input type="text" id="book1" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>書籍2</label>
+					<input type="text" id="book2" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>書籍3</label>
+					<input type="text" id="book3" class="form-control">
+				</div>
+			</form>
+		  </div><!-- modal body -->
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" id="add" class="btn btn-primary">追加検索</button>
 		  </div>
 		</div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>	
-	<script src="js/index.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>	
+	<script src="../static/js/index2.js"></script>
 </body>
 </html>
