@@ -23,6 +23,16 @@ class amazonAPI:
         self.__amazon = api.Amazon(self.__AK, self.__SK, self.__AT, Region=region)
 
 
+    def キーワードチェック(func):
+        def check(self, *args, **kwargs):
+            if self._keyword:
+                return func(self, *args, **kwargs)
+            else:
+                return (-1, "Call search method first!")
+
+        return check
+
+
     #検索する時は最初のこのメソッドを呼び出す
     def search(self, Keywords,
                      ItemPage=1,
@@ -52,19 +62,19 @@ class amazonAPI:
         
 
     #検索結果のURLを返す
+    @キーワードチェック
     def get_moreURL(self):
-        if not self._keyword:
-            return (-1, "Call search method first!")
-
         return self.__soup.find("moresearchresultsurl").text
 
 
     #現在設定されている検索ワードを返す
+    @キーワードチェック
     def getKeyword(self):
         return self._keyword
 
 
     #number:1〜10を指定して検索結果から一件取得。辞書型で返す。
+    @キーワードチェック
     def get_with_number(self,number):
         if not 1 <= number <= 10:
             return (-1, "Please set number in range of 1 to 10")
@@ -169,18 +179,23 @@ class amazonAPI:
             return (-1, "APIの仕様が変わった可能性があります…")
 
 
+    @キーワードチェック
     def soup(self):
-        if not self._keyword:
-            return (-1, "Call search method first!")
-
         return self.__soup
 
 
 if __name__ == "__main__":
-    myapi = amazonAPI(AK, SK, AT)
+    myapi = amazonAPI("AK", "SK", "AT")
 
     myapi.search("応用物理学")
 
-    for val in range(1,11):
-        print(myapi.get_with_number(number=val))
-        print("-"*30)
+    for val in range(1, 11):
+        a = myapi.get_with_number(number=val)
+
+        if type(a) == type(()): #エラーチェック
+            pass
+        else:
+            print(a)
+
+        print("-" * 30)
+
