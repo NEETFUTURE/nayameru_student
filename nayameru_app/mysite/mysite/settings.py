@@ -110,3 +110,4 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
 )
 AUTH_USER_MODEL = 'userauth.CustomUser'
+LOGIN_URL = "login"
