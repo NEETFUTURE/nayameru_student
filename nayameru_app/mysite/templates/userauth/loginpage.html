@@ -1,0 +1,16 @@
+<h1>ログインページ</h1>
+
+{% if messages %}
+    {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+{% endif %}
+
+<form method="POST" action="">
+    <table>
+        {{ form.as_table }}
+    </table>
+
+    <input type="submit" value="ログイン">
+    {% csrf_token %}
+</form>
