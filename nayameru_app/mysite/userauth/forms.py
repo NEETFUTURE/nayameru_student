@@ -43,10 +43,11 @@ class UserForm(forms.ModelForm):
 class loginForm(forms.Form):
     username = forms.CharField(
         label="ユーザ名",
-        required=True
+        required=True,
+        widget=forms.TextInput(attrs={"required":"required", "placeholder":"ユーザID"})
     )
 
     password = forms.CharField(
         label="パスワード",
-        widget=forms.PasswordInput()
+        widget=forms.PasswordInput(attrs={"required":"required", "placeholder":"パスワード"})
     )
