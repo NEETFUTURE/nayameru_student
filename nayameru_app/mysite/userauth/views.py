@@ -10,6 +10,8 @@ from .forms import (
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth import logout as auth_logout
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 
 def touroku(request):
@@ -31,15 +33,17 @@ def touroku(request):
             new_user.save()
 
             messages.success(request, "登録が完了しました")
-            return redirect("nayameru_student:index") #ここ変更されるかもね
+            #return redirect("nayameru_student:index") #ここ変更されるかもね
+            return redirect("userauth:touroku")
         else:
             messages.error(request, "何かしらのミスがあるよぉ") #あかりちゃん
 
     d = {
-        "form" : form
+        "form" : form,
+        "users" : CustomUser.objects.all()
     }
 
-    return redirect(request, "touroku.html", d) #ファイル名はまだ未定
+    return render(request, "userauth/touroku.html", d) #ファイル名はまだ未定
 
 
 def login(request):
@@ -66,12 +70,16 @@ def login(request):
         "form" : form
     }
 
-    return render(request, "login.html", d) #ファイル名はまだ未定
+    return render(request, "userauth/loginpage.html", d) #ファイル名はまだ未定
 
 
 def logout(request):
     auth_logout(request)
     messages.success(request, "ログアウトに成功しました")
-    return redirect("nayameru_student:index") #ここ変更されるかもね
+    #return redirect("nayameru_student:index") #ここ変更されるかもね
+    return redirect("userauth:touroku")
 
 
+@login_required
+def testlogin(request):
+    return HttpResponse("ここはログインが必要なページです")

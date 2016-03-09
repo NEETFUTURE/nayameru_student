@@ -6,12 +6,13 @@ from django.contrib.auth import authenticate
 class UserForm(forms.ModelForm):
     class Meta:
         model = CustomUser
-        fields = ("username", "password", "university_name", "email")
+        fields = ("username", "password", "universityname", "email")
         widgets = {
             "username" : forms.TextInput(attrs={"size" : 40}),
             "password" : forms.PasswordInput(attrs={"size" : 40}),
             "universityname" : forms.TextInput(attrs={"size" : 40}),
-            "email" : forms.EmailField(required=True)
+            #"email" : forms.EmailField(),
+            "email" : forms.EmailInput()
         }
 
 
