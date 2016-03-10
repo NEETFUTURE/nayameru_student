@@ -42,5 +42,8 @@ html, body {
   #content .jumbotron .book-title {
     border-bottom: 2px solid grey;
     margin-bottom: 20px; }
+  #content .jumbotron .new, #content .jumbotron .used {
+    font-size: 19px;
+    color: red; }
 
 /*# sourceMappingURL=index.css.map */

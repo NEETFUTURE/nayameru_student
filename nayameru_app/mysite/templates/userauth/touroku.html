@@ -1,0 +1,32 @@
+{% if messages %}
+    {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+{% endif %}
+
+<form action="" method="POST">
+    {% for field in form %}
+
+        {% if field.errors %}
+            {{ field.errors }}
+        {% endif %}
+        <br>
+
+        {{ field.label_tag }}
+
+        {{ field }}
+        <br>
+
+    {% endfor %}
+
+    <input type="submit" value="登録">
+    {% csrf_token %}
+</form>
+
+{% for user in users %}
+    <h3>{{ user.username }} : {{ user.password }} : {{ user.gakuseki }}</h3>
+{% endfor %}
+
+{% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">ログアウト</a>
+{% endif %}
