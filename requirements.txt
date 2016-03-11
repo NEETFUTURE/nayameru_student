@@ -1,0 +1,4 @@
+Django==1.8.7
+beautifulsoup4==4.4.1
+bottlenose==0.6.3
+pytz==2015.7
