@@ -1,9 +1,13 @@
-body {
-  background-image: url("../img/back.jpg");
-  background-position: center center;
+/*body {
+  background-image: url("../img/book.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
-  background-color: grey; }
-
+  position:absolute;
+  bottom : 0;
+  background-color: white; }*/
+img {
+  position:absolute;
+  bottom: 0;
+  right:0;
+}
 /*# sourceMappingURL=top.css.map */

@@ -1,17 +1,29 @@
-{% extends "index.html" %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-	<link rel="stylesheet" href="../static/css/bootstrap.css">
-	<link rel="stylesheet" href="../static/css/top.css">
-</head>
-<body>
-	{% block navbar%}{% endblock %}
-<h1>Hello</h1>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../static/js/bootstrap.js"></script>
-</body>
-</html>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block head %}
+<link rel="stylesheet" href="../static/css/top.css">
+{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-md-7">
+			<form action="" class="form-inline">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-xs-6">
+							<label for="exampleInputEmail2">Email</label>
+						</div>
+						<div class="col-xs-6">
+							<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+						</div>
+					</div>
+			 </div>
+			</form>
+		</div>
+		<div class="col-xs-12 col-md-5">
+			<!-- something -->
+		</div> <!-- row -->
+	</div><!-- container -->
+	<img src="../static/img/book.png" alt="thi book" width="40%">
+</div>
+{% endblock %}
