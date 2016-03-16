@@ -4,26 +4,25 @@
 <link rel="stylesheet" href="../static/css/top.css">
 {% endblock %}
 {% block content %}
-<div class="container">
-	<div class="row">
-		<div class="col-xs-12 col-md-7">
-			<form action="" class="form-inline">
-				<div class="form-group">
-					<div class="row">
-						<div class="col-xs-6">
-							<label for="exampleInputEmail2">Email</label>
-						</div>
-						<div class="col-xs-6">
-							<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-						</div>
-					</div>
-			 </div>
+	<div class="container">
+		<div class="fuga">
+			<form action="">
+				<div class="form-group" name="form">
+					<label for="search">検索:</label>
+					<input type="text" class="form-control" id="mybox">
+				</div>
+				<div class="input-group add">
+					<input id="text" type="text" class="form-control" placeholder="教科書">
+					<input id="pub" type="text" class="form-control" placeholder="出版社">
+					<span class="input-group-btn">
+						<button id="btn" class="btn btn-default" type="button">Add</button>
+					</span>
+				</div><!-- /input-group -->
 			</form>
-		</div>
-		<div class="col-xs-12 col-md-5">
-			<!-- something -->
-		</div> <!-- row -->
+		</div><!--fuga -->
 	</div><!-- container -->
-	<img src="../static/img/book.png" alt="thi book" width="40%">
+	<!-- <img src="../static/img/book.png" alt="thi book" width="40%"> -->
 </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../static/js/top.js"></script>
 {% endblock %}
