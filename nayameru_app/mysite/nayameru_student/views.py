@@ -4,6 +4,7 @@ from django.core.context_processors import csrf
 #import amazonAPI
 from .amazonAPI import amazonAPI
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_GET
 from .models import SearchLog
 
 
@@ -17,13 +18,14 @@ def index(request):
 
 
 #@login_required #ログイン必須にするデコレータ
+@require_GET
 def find_book(request):
     #教科書名1,教科書名2,教科書名3,... みたいな感じの複数教科書名検索に対応させる必要あり…？
 
     payload = {}
     payload.update(csrf(request))
     myapi = amazonAPI("AK", "SK", "AT")
-    w = request.POST['search_word']
+    w = request.GET['search_word']
     myapi.search(w)
     books_data = [(myapi.get_with_number(number=(2*i-2)),
                    myapi.get_with_number(number=(2*i-1))) for i in range(1,6)]
