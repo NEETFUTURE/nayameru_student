@@ -10,6 +10,6 @@ class SearchLog(models.Model):
     lowest_price = models.IntegerField()
     at_data = models.DateTimeField('date published')
 
-    class Meta:
-        abstract = True
+    # class Meta:
+    #     abstract = True
 
