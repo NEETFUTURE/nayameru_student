@@ -4,12 +4,16 @@
 <link rel="stylesheet" href="../static/css/top.css">
 {% endblock %}
 {% block content %}
+<div id="alert"></div>
 	<div class="container">
 		<div class="fuga">
 			<form action="">
 				<div class="form-group" name="form">
 					<label for="search">検索:</label>
-					<input type="text" class="form-control" id="mybox">
+					<input id="allText" type="text" class="form-control" placeholder="すべての教科書">
+				</div>
+				<div class="text-center">
+					<button id="s-btn" class="btn btn-default text-center" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>  けんさく</button>
 				</div>
 				<div class="input-group add">
 					<input id="text" type="text" class="form-control" placeholder="教科書">
