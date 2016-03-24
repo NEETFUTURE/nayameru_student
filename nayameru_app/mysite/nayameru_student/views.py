@@ -26,9 +26,22 @@ def find_book(request):
     payload.update(csrf(request))
     myapi = amazonAPI("AK", "SK", "AT")
     w = request.GET['search_word']
+    s = request.GET['sort']
+
     myapi.search(w)
-    books_data = [(myapi.get_with_number(number=(2*i-2)),
-                   myapi.get_with_number(number=(2*i-1))) for i in range(1,6)]
+    books_data_ = [myapi.get_with_number(number=i) for i in range(1,11)]
+
+    if s=='high':
+        books_data_.sort(key = lambda book: book.used_price)
+    elif s=='low':
+        books_data_.sort(key = lambda book: book.used_price, reverse=True)
+    #人気順でソートするのは未実装
+    else:
+        books_data_.sort(key = lambda book: book.used_price)
+
+
+    books_data = [(books_data_[2*i-2],
+                   books_data_[2*i-1]) for i in range(1,6)]
     print(books_data)
     payload.update({"books_data":books_data})
 
@@ -40,7 +53,7 @@ def find_book(request):
     # )
     # new_log.save()
 
-    return render_to_response("index.html",
+    return render_to_response("top.html",
                               payload)
 
 
