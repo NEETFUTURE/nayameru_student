@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block head %}
+<link rel="stylesheet" href="../static/css/top.css">
+{% endblock %}
+{% block content %}
+<div id="alert"></div>
+	<div class="container">
+		<div class="fuga">
+			<form action="">
+				<div class="form-group" name="form">
+					<label for="search">検索:</label>
+					<input id="allText" type="text" class="form-control" placeholder="すべての教科書">
+				</div>
+				<div class="text-center">
+					<button id="s-btn" class="btn btn-default text-center" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>  けんさく</button>
+				</div>
+				<div class="input-group add">
+					<input id="text" type="text" class="form-control" placeholder="教科書">
+					<input id="pub" type="text" class="form-control" placeholder="出版社">
+					<span class="input-group-btn">
+						<button id="btn" class="btn btn-default" type="button">Add</button>
+					</span>
+				</div><!-- /input-group -->
+			</form>
+		</div><!--fuga -->
+	</div><!-- container -->
+	<!-- <img src="../static/img/book.png" alt="thi book" width="40%"> -->
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../static/js/top.js"></script>
+{% endblock %}

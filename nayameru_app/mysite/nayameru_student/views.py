@@ -52,3 +52,9 @@ def find_book(request):
 #     tmp = [log.book_name for log in logs]
 #
 #     return tmp
+# Create your views here.
+def index(request):
+    return render(request, "index.html", {})
+
+def top(request):
+    return render(request, "top.html", {})

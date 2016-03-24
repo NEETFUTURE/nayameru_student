@@ -1,0 +1,57 @@
+html {
+	width:100%;
+	height:100%;
+}
+body {
+	width:100%;
+	height:100%;
+	.container {
+		padding-top: 50px;
+		.fuga {
+			box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.9);
+		 -webkit-box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.9);
+		 -moz-box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.9);
+			padding:50px 13px;
+			width:80%;
+			float:none;
+			margin: 0 auto ;
+			.add {
+			  padding-top:25px;
+				#text {
+					width:60%;
+					background-color: #f2f2f2;
+				}
+				#text:focus {
+					background-color: white;
+				}
+				#pub {
+					width:40%;
+					background-color: #f2f2f2;
+				}
+				#pub:focus {
+					background-color: white;
+				}
+				#btn {
+					text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+				}
+				#btn:hover {
+					letter-spacing: 5px;
+					background-color: #59b1eb;
+				}
+			}
+			#s-btn {
+				position: relative;
+				border: 2px solid #333;
+			}
+			#s-btn:hover {
+				background-color: #dbdbdb;
+			}
+			#allText {
+				background-color: #f2f2f2;
+			}
+			#allText:focus {
+				background-color: white;
+			}
+		}
+	}
+}

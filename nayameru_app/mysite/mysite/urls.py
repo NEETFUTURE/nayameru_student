@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^nayameru_student/', include('nayameru_student.urls', namespace='nayameru_student')),
+    url(r'^content/', include('nayameru_student.urls', namespace='nayameru_student')),
+    #url(r'^top/',   include('nayameru_student.urls', namespace='nayameru_student')),
     url(r"^auth/", include("userauth.urls", namespace="userauth")),
     url(r"^login/$", "userauth.views.login", name="login"),
     url(r"^logout/$", "userauth.views.logout", name="logout"),
