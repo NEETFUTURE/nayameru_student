@@ -3,6 +3,7 @@ from bottlenose import api
 from bs4 import BeautifulSoup as bs
 import sys
 import traceback
+import json
 
 
 
@@ -16,10 +17,21 @@ class amazonAPI:
     __soup     = None
     _keyword = ""
 
-    def __init__(self, ACCESS_KEY, SECRET_KEY, TAG, region="JP"):
-        self.__AK = ACCESS_KEY
-        self.__SK = SECRET_KEY
-        self.__AT = TAG
+    def __init__(self, region="JP"):
+        try:
+            with open("api_keys.json","r") as f:
+                key_data=json.load(f)
+                self.__AK = key_data["AK"]
+                self.__SK = key_data["SK"]
+                self.__AT = key_data["TK"]
+        except FileNotFoundError as inst:
+            print(type(inst))
+            print("キーを格納したapi_keys.jsonファイルをmysite/nayameru_student直下に配置してください")
+        except KeyError as inst:
+            print(type(inst))     # the exception instance
+            print(inst.args)
+            print("キーが足りません")
+
         self.__amazon = api.Amazon(self.__AK, self.__SK, self.__AT, Region=region)
 
 
